@@ -1,110 +1,82 @@
-# GitHub Intelligence Graph 🕸️
+# github-intelligence-graph
 
-A high-compute scraping project that builds a developer influence graph from GitHub data. Extract relationships between repositories, developers, organizations, and trace influence propagation through the open-source ecosystem.
+## Detailed Description
 
-## 🎯 Project Overview
+github-intelligence-graph is maintained as an industry-grade software project with production-ready engineering practices.  
+This repository includes documented setup, quality gates, operational guidance, and governance standards so contributors can safely build, test, and ship changes with confidence.
 
-**Goal**: Build a comprehensive knowledge graph of the GitHub ecosystem to analyze:
-- Developer influence and expertise propagation
-- Technology trend heatmaps
-- Early signal detection for breakout repositories
-- Technical due diligence for projects
+## Problem Statement
 
-## 🏗️ Architecture
+Describe the user or business problem this project solves, the target users, and expected outcomes.
 
+## Solution Overview
+
+Summarize the architecture, core modules, and runtime behavior at a high level.
+
+## Key Features
+
+- Clear project scope and intended use.
+- Reproducible local development workflow.
+- Test coverage and CI quality gates.
+- Security and contribution policies.
+- Deployment-ready repository structure.
+
+## Repository Structure
+
+```text
+.
+|-- src/                  # Core implementation
+|-- tests/                # Automated test suites
+|-- docs/                 # Design notes and operational docs
+|-- .github/workflows/    # CI pipelines
+|-- README.md
+|-- LICENSE
+|-- CONTRIBUTING.md
+|-- SECURITY.md
+|-- CODE_OF_CONDUCT.md
 ```
-┌─────────────────────────────────────────────────────────────┐
-│                    GitHub Intelligence Graph                │
-├─────────────────────────────────────────────────────────────┤
-│  ┌─────────────┐  ┌─────────────┐  ┌─────────────────┐   │
-│  │   Scraper   │  │   Graph     │  │   Analytics     │   │
-│  │   Engine    │──▶│   Store     │──▶│   Engine        │   │
-│  └─────────────┘  │  (Neo4j)    │  └─────────────────┘   │
-│                   └─────────────┘                          │
-│  ┌─────────────┐  ┌─────────────┐  ┌─────────────────┐   │
-│  │  GitHub API │  │  Vector DB  │  │   Visualizer    │   │
-│  │  + Raw HTML │  │ (Pinecone)  │  │   (D3.js)       │   │
-│  └─────────────┘  └─────────────┘  └─────────────────┘   │
-└─────────────────────────────────────────────────────────────┘
-```
 
-## 📊 Data Sources
+## Getting Started
 
-- **Public Repositories**: Stars, forks, issues, PRs, releases
-- **Developer Profiles**: Contributions, followers, organizations
-- **Commit History**: Author patterns, contribution graphs
-- **Issues & PRs**: Activity timelines, sentiment
-- **Release Notes**: Changelog extraction
+### Prerequisites
 
-## 🔧 Tech Stack
+- Git
+- Project runtime/toolchain for this repo
 
-- **Language**: Python + TypeScript
-- **Graph Database**: Neo4j
-- **Vector Store**: Pinecone / Qdrant
-- **API**: FastAPI (Python) + Express (TypeScript)
-- **Queue**: Redis + BullMQ
-- **Embeddings**: CodeBERT, GraphCodeBERT
-
-## 🚀 Getting Started
+### Local Setup
 
 ```bash
-# Clone the repo
-git clone https://github.com/yksanjo/github-intelligence-graph.git
-cd github-intelligence-graph
-
-# Install dependencies
-pip install -r requirements.txt
-
-# Set up environment
-cp .env.example .env
-# Edit .env with your GitHub token
-
-# Run the scraper
-python src/scraper/github_scraper.py
-
-# Start the API
-uvicorn src.api.main:app --reload
+make test
+make lint
 ```
 
-## 📈 Features
+## Usage
 
-- [ ] GitHub API integration with rate limiting
-- [ ] Neo4j graph storage
-- [ ] Code embeddings generation
-- [ ] Developer influence scoring
-- [ ] Technology trend analysis
-- [ ] Interactive D3.js visualization
-- [ ] Real-time webhook updates
+Document primary commands, API routes, CLI examples, or UI workflows here.
 
-## 📊 Project Phases
+## Quality Standards
 
-### Phase 1: Data Collection
-- GitHub API scraper for top 10K repos
-- Metadata extraction (stars, forks, contributors)
-- Commit history analysis
+- CI must pass before merge.
+- Changes require tests for critical behavior.
+- Security-sensitive changes should include risk notes.
+- Keep pull requests focused and reviewable.
 
-### Phase 2: Graph Building
-- Neo4j schema design
-- Entity resolution
-- Relationship mapping
+## Security
 
-### Phase 3: Intelligence
-- Code embeddings
-- Influence algorithms
-- Trend detection
+See `SECURITY.md` for responsible disclosure and handling guidelines.
 
-### Phase 4: Visualization
-- D3.js interactive graphs
-- Dashboard analytics
+## Contributing
 
-## 📝 License
+See `CONTRIBUTING.md` for branching, commit, and pull request expectations.
 
-MIT License - See [LICENSE](LICENSE) for details.
+## Roadmap
 
-## 👤 Author
+Track upcoming milestones, technical debt, and planned feature work.
 
-Yoshi Kondo - [@yksanjo](https://github.com/yksanjo)
+## Support
 
----
+Open a GitHub issue for bugs, feature requests, or documentation gaps.
 
-🌟 Star us on GitHub if you find this interesting!
+## License
+
+This project is released under the MIT License.
